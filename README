@@ -8,7 +8,7 @@ different modules. Each represents one aspect, feature or provides the base
 functionality for other modules.
 
 "pas_http_file_form" adds a file based form and dynamic processor to e.g.
-send the input via e-Mail.
+send the input via e-mail.
 
 ----------------------------------------------------------------------------
 Licensing

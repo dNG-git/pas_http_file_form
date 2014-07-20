@@ -2,15 +2,11 @@
 ##j## BOF
 
 """
-dNG.pas.data.http.form.AbstractFileFormProcessor
-"""
-"""n// NOTE
-----------------------------------------------------------------------------
 direct PAS
 Python Application Services
 ----------------------------------------------------------------------------
 (C) direct Netware Group - All rights reserved
-http://www.direct-netware.de/redirect.py?pas;http;core
+http://www.direct-netware.de/redirect.py?pas;http;file_form
 
 This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file, You can
@@ -20,17 +16,17 @@ http://www.direct-netware.de/redirect.py?licenses;mpl2
 ----------------------------------------------------------------------------
 #echo(pasHttpFileFormVersion)#
 #echo(__FILEPATH__)#
-----------------------------------------------------------------------------
-NOTE_END //n"""
+"""
 
-from dNG.pas.data.text.form_processor import FormProcessor
+from dNG.pas.data.xhtml.form.processor import Processor
 from dNG.pas.runtime.not_implemented_exception import NotImplementedException
 from dNG.pas.runtime.value_exception import ValueException
 
 class AbstractFileFormProcessor(object):
 #
 	"""
-Service for "s=file_form"
+"AbstractFileFormProcessor" defines common methods to develop different
+processors based on a definition file.
 
 :author:     direct Netware Group
 :copyright:  (C) direct Netware Group - All rights reserved
@@ -40,6 +36,8 @@ Service for "s=file_form"
 :license:    http://www.direct-netware.de/redirect.py?licenses;mpl2
              Mozilla Public License, v. 2.0
 	"""
+
+	# pylint: disable=unused-argument
 
 	def __init__(self):
 	#
@@ -80,7 +78,7 @@ Sets the given form.
 :since: v0.1.00
 		"""
 
-		if (not isinstance(form, FormProcessor)): raise ValueException("Form instance given is not valid")
+		if (not isinstance(form, Processor)): raise ValueException("Form instance given is not valid")
 		self.form = form
 	#
 
