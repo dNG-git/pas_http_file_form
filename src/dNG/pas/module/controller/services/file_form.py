@@ -30,7 +30,7 @@ from dNG.pas.data.http.translatable_exception import TranslatableException
 from dNG.pas.data.http.form.abstract_file_form_processor import AbstractFileFormProcessor
 from dNG.pas.data.text.input_filter import InputFilter
 from dNG.pas.data.text.l10n import L10n
-from dNG.pas.data.xhtml.formatting import Formatting
+from dNG.pas.data.xhtml.formatting import Formatting as XHtmlFormatting
 from dNG.pas.data.xhtml.link import Link
 from dNG.pas.data.xhtml.notification_store import NotificationStore
 from dNG.pas.data.xhtml.form.processor import Processor as FormProcessor
@@ -177,7 +177,7 @@ Action for "form"
 
 			if ("html_title_{0}".format(lang) in file_data): html_title = file_data["html_title_{0}".format(lang)]
 			elif ("html_title" in file_data): html_title = file_data['html_title']
-			else: html_title = Formatting.escape(title)
+			else: html_title = XHtmlFormatting.escape(title)
 
 			content = { "title": html_title }
 
@@ -203,7 +203,7 @@ Action for "form-save"
 :since: v0.1.00
 		"""
 
-		self.execute_form(True)
+		self.execute_form(self.request.get_type() == "POST")
 	#
 #
 
