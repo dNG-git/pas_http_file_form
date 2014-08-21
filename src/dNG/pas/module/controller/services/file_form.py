@@ -23,8 +23,8 @@ import os
 import re
 
 from dNG.pas.controller.predefined_http_request import PredefinedHttpRequest
-from dNG.pas.data.cached_json_file import CachedJsonFile
 from dNG.pas.data.settings import Settings
+from dNG.pas.data.cache.json_file_content import JsonFileContent
 from dNG.pas.data.http.translatable_error import TranslatableError
 from dNG.pas.data.http.translatable_exception import TranslatableException
 from dNG.pas.data.http.form.abstract_file_form_processor import AbstractFileFormProcessor
@@ -76,11 +76,11 @@ Action for "form"
 		source_iline = InputFilter.filter_control_chars(self.request.get_dsd("source", "")).strip()
 		target_iline = InputFilter.filter_control_chars(self.request.get_dsd("target", "")).strip()
 
-		source = (Link.encode_query_value(source_iline) if (source_iline != "") else "")
-		target = ""
+		source = source_iline
 
-		if (target_iline != ""): target = Link.encode_query_value(target_iline)
-		else:
+		target = target_iline
+
+		if (target_iline == ""):
 		#
 			target_iline = (source_iline
 			                if (source_iline != "") else
@@ -107,7 +107,7 @@ Action for "form"
 		    or (not os.access(file_pathname, os.R_OK))
 		   ): raise TranslatableError("pas_http_file_form_not_found", 404)
 
-		file_data = CachedJsonFile.read(file_pathname)
+		file_data = JsonFileContent.read(file_pathname)
 		lang = self.request.get_lang()
 
 		if (file_data == None
@@ -161,7 +161,7 @@ Action for "form"
 
 			if ("html_done_message_{0}".format(lang) in file_data): html_info = file_data["html_done_message_{0}".format(lang)]
 			elif ("html_done_message" in file_data): html_info = file_data['html_done_message']
-			else: html_info = L10n.get("pas_http_file_form_done_message")
+			else: html_info = L10n.get("pas_http_core_form_done_message")
 
 			NotificationStore.get_instance().add_completed_info(html_info)
 

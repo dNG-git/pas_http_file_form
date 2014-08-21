@@ -83,7 +83,7 @@ e-mail subject
 	def run(self):
 	#
 		"""
-Hook execution
+Task execution
 
 :since: v0.1.00
 		"""
