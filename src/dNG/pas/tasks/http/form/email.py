@@ -91,11 +91,11 @@ Task execution
 		content = EMailRenderer(self.l10n).render(self.content, EMailRenderer.REASON_ON_DEMAND)
 		part = Part(Part.TYPE_MESSAGE_BODY, "text/plain", content)
 
-		recipient = (Settings.get("pas_email_recipient_notifications") if (self.recipient == None) else self.recipient)
+		recipient = (Settings.get("pas_email_recipient_notifications") if (self.recipient is None) else self.recipient)
 
 		message = Message()
 		message.add_body(part)
-		if (self.sender != None): message.set_from(self.sender)
+		if (self.sender is not None): message.set_from(self.sender)
 		message.set_subject(self.subject)
 		message.set_to(recipient)
 

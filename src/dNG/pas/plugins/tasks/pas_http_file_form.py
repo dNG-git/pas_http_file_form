@@ -45,7 +45,7 @@ Called for "dNG.pas.http.Form.sendEMail"
 :since:  v0.1.00
 	"""
 
-	if (last_return != None): _return = last_return
+	if (last_return is not None): _return = last_return
 	elif ("lang" not in params
 	      or "sender" not in params
 	      or "subject" not in params

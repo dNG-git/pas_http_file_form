@@ -101,16 +101,16 @@ Action for "form"
 		               priority = 7
 		              )
 
-		file_pathname = path.abspath("{0}/forms/{1}.json".format(Settings.get("path_data"), form_id))
+		file_path_name = path.abspath("{0}/forms/{1}.json".format(Settings.get("path_data"), form_id))
 
-		if ((not path.exists(file_pathname))
-		    or (not os.access(file_pathname, os.R_OK))
+		if ((not path.exists(file_path_name))
+		    or (not os.access(file_path_name, os.R_OK))
 		   ): raise TranslatableError("pas_http_file_form_not_found", 404)
 
-		file_data = JsonFileContent.read(file_pathname)
+		file_data = JsonFileContent.read(file_path_name)
 		lang = self.request.get_lang()
 
-		if (file_data == None
+		if (file_data is None
 		    or (("form_{0}".format(lang) not in file_data) and ("form" not in file_data))
 		    or "execution" not in file_data
 		    or (not isinstance(file_data['execution'], dict))

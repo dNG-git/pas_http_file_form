@@ -50,7 +50,7 @@ Executes the processor.
 :since: v0.1.00
 		"""
 
-		if (self.form == None or (not self.validate_settings(self.settings))): raise ValueException("Processor is not configured")
+		if (self.form is None or (not self.validate_settings(self.settings))): raise ValueException("Processor is not configured")
 
 		lang = (self.settings['email_lang']
 		        if ("email_lang" in self.settings) else
@@ -67,7 +67,7 @@ Executes the processor.
 		           self.settings['email_subject_title']
 		          )
 
-		if (subject == None or len(subject.strip()) < 1): raise ValueException("Given e-mail subject is invalid")
+		if (subject is None or len(subject.strip()) < 1): raise ValueException("Given e-mail subject is invalid")
 
 		content_list = [ ]
 		titles = self.settings.get("form_field_titles", { })
