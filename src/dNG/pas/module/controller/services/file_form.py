@@ -94,7 +94,7 @@ Action for "form"
 		if (self.response.is_supported("html_css_files")): self.response.add_theme_css_file("mini_default_sprite.min.css")
 
 		Link.set_store("servicemenu",
-		               Link.TYPE_RELATIVE,
+		               Link.TYPE_RELATIVE_URL,
 		               L10n.get("core_back"),
 		               { "__query__": re.sub("\\_\\_\\w+\\_\\_", "", source_iline) },
 		               icon = "mini-default-back",
@@ -123,7 +123,7 @@ Action for "form"
 		   ):
 		#
 			Link.set_store("servicemenu",
-			               Link.TYPE_RELATIVE,
+			               Link.TYPE_RELATIVE_URL,
 			               L10n.get("core_back"),
 			               { "__query__": (file_data["html_back_url_{0}".format(lang)]
 			                               if ("html_back_url_{0}".format(lang) in file_data) else

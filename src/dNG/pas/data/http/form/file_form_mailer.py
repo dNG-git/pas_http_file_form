@@ -118,7 +118,7 @@ Called to validate the given settings.
 			recipient = InputFilter.filter_email_address(data['recipient'])
 			if (recipient == ""): _return = False
 
-			if (type(data['email_content_field_names']) != list): _return = False
+			if (type(data['email_content_field_names']) is not list): _return = False
 			if ("email_subject_title" in data and len(data['email_subject_title']) < 1): _return = False
 		#
 
