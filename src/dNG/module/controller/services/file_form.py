@@ -22,20 +22,21 @@ from os import path
 import os
 import re
 
-from dNG.pas.controller.predefined_http_request import PredefinedHttpRequest
-from dNG.pas.data.settings import Settings
-from dNG.pas.data.cache.json_file_content import JsonFileContent
-from dNG.pas.data.http.translatable_error import TranslatableError
-from dNG.pas.data.http.translatable_exception import TranslatableException
-from dNG.pas.data.http.form.abstract_file_form_processor import AbstractFileFormProcessor
-from dNG.pas.data.text.input_filter import InputFilter
-from dNG.pas.data.text.l10n import L10n
-from dNG.pas.data.xhtml.formatting import Formatting as XHtmlFormatting
-from dNG.pas.data.xhtml.link import Link
-from dNG.pas.data.xhtml.notification_store import NotificationStore
-from dNG.pas.data.xhtml.form.processor import Processor as FormProcessor
-from dNG.pas.module.named_loader import NamedLoader
-from dNG.pas.plugins.hook import Hook
+from dNG.controller.predefined_http_request import PredefinedHttpRequest
+from dNG.data.cache.json_file_content import JsonFileContent
+from dNG.data.http.form.abstract_file_form_processor import AbstractFileFormProcessor
+from dNG.data.http.translatable_error import TranslatableError
+from dNG.data.http.translatable_exception import TranslatableException
+from dNG.data.settings import Settings
+from dNG.data.text.input_filter import InputFilter
+from dNG.data.text.l10n import L10n
+from dNG.data.xhtml.form.processor import Processor as FormProcessor
+from dNG.data.xhtml.formatting import Formatting as XHtmlFormatting
+from dNG.data.xhtml.link import Link
+from dNG.data.xhtml.notification_store import NotificationStore
+from dNG.module.named_loader import NamedLoader
+from dNG.plugins.hook import Hook
+
 from .module import Module
 
 class FileForm(Module):
@@ -43,7 +44,7 @@ class FileForm(Module):
 	"""
 Service for "s=file_form"
 
-:author:     direct Netware Group
+:author:     direct Netware Group et al.
 :copyright:  (C) direct Netware Group - All rights reserved
 :package:    pas.http
 :subpackage: file_form

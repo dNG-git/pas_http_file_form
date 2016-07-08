@@ -18,9 +18,9 @@ https://www.direct-netware.de/redirect?licenses;mpl2
 #echo(__FILEPATH__)#
 """
 
-from dNG.pas.plugins.hook import Hook
-from dNG.pas.runtime.value_exception import ValueException
-from dNG.pas.tasks.http.form.email import EMail
+from dNG.plugins.hook import Hook
+from dNG.runtime.value_exception import ValueException
+from dNG.tasks.http.form.email import EMail
 
 def register_plugin():
 #

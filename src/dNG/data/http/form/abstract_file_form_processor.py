@@ -18,9 +18,9 @@ https://www.direct-netware.de/redirect?licenses;mpl2
 #echo(__FILEPATH__)#
 """
 
-from dNG.pas.data.xhtml.form.processor import Processor
-from dNG.pas.runtime.not_implemented_exception import NotImplementedException
-from dNG.pas.runtime.value_exception import ValueException
+from dNG.data.xhtml.form.processor import Processor
+from dNG.runtime.not_implemented_exception import NotImplementedException
+from dNG.runtime.value_exception import ValueException
 
 class AbstractFileFormProcessor(object):
 #
@@ -28,7 +28,7 @@ class AbstractFileFormProcessor(object):
 "AbstractFileFormProcessor" defines common methods to develop different
 processors based on a definition file.
 
-:author:     direct Netware Group
+:author:     direct Netware Group et al.
 :copyright:  (C) direct Netware Group - All rights reserved
 :package:    pas.http
 :subpackage: file_form

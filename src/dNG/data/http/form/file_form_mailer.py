@@ -21,11 +21,12 @@ https://www.direct-netware.de/redirect?licenses;mpl2
 from binascii import hexlify
 from os import urandom
 
-from dNG.pas.data.binary import Binary
-from dNG.pas.data.tasks.database_proxy import DatabaseProxy as DatabaseTasks
-from dNG.pas.data.text.input_filter import InputFilter
-from dNG.pas.data.text.l10n import L10n
-from dNG.pas.runtime.value_exception import ValueException
+from dNG.data.binary import Binary
+from dNG.data.tasks.database_proxy import DatabaseProxy as DatabaseTasks
+from dNG.data.text.input_filter import InputFilter
+from dNG.data.text.l10n import L10n
+from dNG.runtime.value_exception import ValueException
+
 from .abstract_file_form_processor import AbstractFileFormProcessor
 
 class FileFormMailer(AbstractFileFormProcessor):
@@ -33,7 +34,7 @@ class FileFormMailer(AbstractFileFormProcessor):
 	"""
 FileForm processor that sends an e-mail.
 
-:author:     direct Netware Group
+:author:     direct Netware Group et al.
 :copyright:  (C) direct Netware Group - All rights reserved
 :package:    pas.http
 :subpackage: file_form

@@ -20,18 +20,18 @@ https://www.direct-netware.de/redirect?licenses;mpl2
 
 from dNG.data.rfc.email.message import Message
 from dNG.data.rfc.email.part import Part
-from dNG.pas.data.settings import Settings
-from dNG.pas.data.text.email_renderer import EMailRenderer
-from dNG.pas.data.text.l10n import L10n
-from dNG.pas.net.smtp.client import Client as SmtpClient
-from dNG.pas.tasks.abstract import Abstract as AbstractTask
+from dNG.data.settings import Settings
+from dNG.data.text.email_renderer import EMailRenderer
+from dNG.data.text.l10n import L10n
+from dNG.net.smtp.client import Client as SmtpClient
+from dNG.tasks.abstract import Abstract as AbstractTask
 
 class EMail(AbstractTask):
 #
 	"""
 The "EMail" task will send a given e-mail based on a parsed form.
 
-:author:     direct Netware Group
+:author:     direct Netware Group et al.
 :copyright:  direct Netware Group - All rights reserved
 :package:    pas.http
 :subpackage: file_form
